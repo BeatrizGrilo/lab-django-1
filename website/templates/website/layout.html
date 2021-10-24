@@ -1,0 +1,35 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    		<title>Website</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+	</head>
+	<body>
+	    <header class="jumbotron text-center bg-danger text-light">
+            <h1>Bicicletas e Companhia 🚲</h1>
+            <p>Bem-vindo!!</p>
+            <nav>
+                <a href="{% url 'website:index' %}" class="btn btn-outline-light">Índice</a>
+                <a href="{% url 'website:home' %}" class="btn btn-outline-light">Como alugar?</a>
+                <a href="{% url 'website:about' %}" class="btn btn-outline-light">Preços</a>
+            </nav>
+        </header>
+	    <article class="container">
+        <div class="row" margin="auto">
+		<main class="col-sm-6">
+            {% block main %}
+	        {% endblock main %}
+        </main>
+		<aside class="col-sm-6">
+            {% load static %}
+            <img src="{% static 'website/image/bicicleta.png' %}">
+        </aside>
+        </div>
+	    </article>
+	    <footer>Trabalho realizado por Beatriz Grilo</footer>
+	</body>
+</html>
